@@ -13,8 +13,8 @@
   <% @products.each do |product| %>
   <li class="flex mb-6">
     <div class="w-full h-full mr-8">
-    <%= image_tag(product.image_url, size: '100x150', 
-      class: 'shadow mr-6') %>
+    <%= image_tag(product.image_url, 
+      class: 'onject-contain w-48 shadow mr-6') %>
     </div>
     <div>
       <h2 class="font-bold text-lg mb-3"><%= product.title %></h2>
@@ -22,7 +22,7 @@
       <%= sanitize(product.description) %>
       </p>
       <div class="mt-3">
-        <%= product.price %>
+        <%= number_to_currency product.price %>
       </div>
     </div>
   </li>
