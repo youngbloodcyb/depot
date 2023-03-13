@@ -100,7 +100,7 @@ class OrdersTest < ApplicationSystemTestCase
     fill_in 'Email', with: 'dave@example.com'
 
     select 'Check', from: 'Pay type'
-    fill_in "Routing numer", with: "123456"
+    fill_in "Routing number", with: "123456"
     fill_in "Account number", with: "987654"
 
     click_button "Place Order"
@@ -124,4 +124,5 @@ class OrdersTest < ApplicationSystemTestCase
     assert_equal ["dave@example.com"], mail.to
     assert_equal 'Sam Ruby <depot@example.com>', mail[:from].value
     assert_equal "Pragmatic Store Order Confirmation", mail.subject
+  end
 end
